@@ -42,6 +42,9 @@
     </Content>
     <Content Include="dist\index.js" />
     <Content Include="dist\index.js.map" />
+    <Content Include="dist\liyanjie.linq.js" />
+    <Content Include="dist\liyanjie.linq.js.map" />
+    <Content Include="dist\liyanjie.linq.min.js" />
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="tsconfig.json" />

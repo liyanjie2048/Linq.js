@@ -6,6 +6,7 @@ exports.default = {
         file: "./dist/liyanjie.linq.js",
         name: "liyanjie.linq",
         format: "umd",
+        sourcemap: true,
     },
     plugins: [typescript()]
 };
