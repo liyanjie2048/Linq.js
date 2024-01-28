@@ -3,9 +3,7 @@ const rename = require('gulp-rename');
 const minifyJs = require('gulp-uglify');
 
 exports.dist = (cp) => {
-    gulp.src('./bundles/liyanjie.linq.umd.js')
-        .pipe(rename('liyanjie.linq.js'))
-        .pipe(gulp.dest('./dist'))
+    gulp.src('./dist/liyanjie.linq.js')
         .pipe(rename({ suffix: '.min' }))
         .pipe(minifyJs())
         .pipe(gulp.dest('./dist'));

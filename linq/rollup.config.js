@@ -3,7 +3,7 @@
 exports.default = {
     input: "./src/index.ts",
     output: {
-        file: "./bundles/liyanjie.linq.umd.js",
+        file: "./dist/liyanjie.linq.js",
         name: "liyanjie.linq",
         format: "umd",
     },

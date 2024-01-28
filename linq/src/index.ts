@@ -20,7 +20,7 @@ export class Enumerable<T> {
 
     private static _check<T>(array: T[]): void
     {
-        if (array === null || array === undefined || !Array.isArray(array))
+        if (!array || !Array.isArray(array))
             throw new Error('Array parameter can not be null or undefined!');
     }
 
@@ -702,7 +702,9 @@ export class NumberEnumerable extends Enumerable<number> {
      */
     average(): number
     {
-        return this.sum() / this.source.length;
+        if (this.source.length)
+            return this.sum() / this.source.length;
+        return 0;
     }
 
     /**
@@ -733,7 +735,7 @@ export class NumberEnumerable extends Enumerable<number> {
      */
     lastOrDefault(predicate?: (item: number) => boolean): number
     {
-        return this.source.length > 0
+        return this.source.length
             ? this.source[this.source.length - 1]
             : 0;
     }
@@ -743,9 +745,9 @@ export class NumberEnumerable extends Enumerable<number> {
      */
     max(): number
     {
-        return this.source.length === 0
-            ? 0
-            : this.source.sort((item1, item2) => item2 - item1)[0];
+        return this.source.length
+            ? this.source.sort((item1, item2) => item2 - item1)[0]
+            : 0;
     }
 
     /**
@@ -753,9 +755,9 @@ export class NumberEnumerable extends Enumerable<number> {
      */
     min(): number
     {
-        return this.source.length === 0
-            ? 0
-            : this.source.sort((item1, item2) => item1 - item2)[0];
+        return this.source.length
+            ? this.source.sort((item1, item2) => item1 - item2)[0]
+            : 0;
     }
 
     /**
@@ -763,11 +765,9 @@ export class NumberEnumerable extends Enumerable<number> {
      */
     sum(): number
     {
-        if (this.source.length === 0)
-            return 0;
-        let sum: number = 0;
-        this.source.forEach(item => sum += item);
-        return sum;
+        return this.source.length
+            ? this.source.reduce((prev, curr) => prev + curr)
+            : 0;
     }
 }
 

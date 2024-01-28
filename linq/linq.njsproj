@@ -40,15 +40,11 @@
     <Content Include=".npmrc">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="bundles\liyanjie.linq.umd.js" />
     <Content Include="dist\index.js" />
     <Content Include="dist\index.js.map" />
-    <Content Include="dist\liyanjie.linq.js" />
-    <Content Include="dist\liyanjie.linq.min.js" />
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="tsconfig.json" />
-    <TypeScriptCompile Include="bundles\dist\index.d.ts" />
     <TypeScriptCompile Include="dist\index.d.ts" />
     <TypeScriptCompile Include="src\index.ts">
       <SubType>Code</SubType>
@@ -59,8 +55,6 @@
     <Compile Include="rollup.config.js" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bundles\" />
-    <Folder Include="bundles\dist\" />
     <Folder Include="dist\" />
     <Folder Include="src\" />
   </ItemGroup>
